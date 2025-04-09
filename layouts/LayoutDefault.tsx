@@ -40,6 +40,26 @@ export default function LayoutDefault({ children }: { children: React.ReactNode 
         name: "Behaviour Tree",
         indent: 1,
       },
+      "billboarders-game-object-pool": {
+        name: "Game Object pooling",
+        indent: 1,
+      },
+      "billboarders-event-bus": {
+        name: "Event Bus",
+        indent: 1,
+      },
+      "billboarders-game-systems": {
+        name: "Game Systems",
+        indent: 1,
+      },
+      "billboarders-navmesh-solution": {
+        name: "NavMesh solution",
+        indent: 1,
+      },
+      "billboarders-3d-depth-effect": {
+        name: "3D Depth effect",
+        indent: 1,
+      },
       "highway-crash": {
         name: "Highway Crash",
       },
