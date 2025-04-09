@@ -202,10 +202,10 @@ export default function LayoutDefault({ children }: { children: React.ReactNode 
                     <FadeImg className={"image"} src={imgBillboarders} alt={"Billboarders"} />
                     <div className={"content"}>
                       <h2>Billboarders</h2>
-                      <HighlightItem>Entity Component System</HighlightItem>
-                      <HighlightItem>Play-in-viewport/simulate</HighlightItem>
-                      <HighlightItem>Multiple level editors simultaneously</HighlightItem>
-                      <HighlightItem>Templated entities/'prefabs'</HighlightItem>
+                      <HighlightItem>C#</HighlightItem>
+                      <HighlightItem>Unity</HighlightItem>
+                      <HighlightItem>Team project</HighlightItem>
+                      <HighlightItem>Published</HighlightItem>
                     </div>
                   </div>
                 </div>
@@ -214,10 +214,9 @@ export default function LayoutDefault({ children }: { children: React.ReactNode 
                     <FadeImg className={"image"} src={imgHighwayCrash} alt={"Highway Crash"} />
                     <div className={"content"}>
                       <h2>Highway Crash</h2>
-                      <HighlightItem>Entity Component System</HighlightItem>
-                      <HighlightItem>Play-in-viewport/simulate</HighlightItem>
-                      <HighlightItem>Multiple level editors simultaneously</HighlightItem>
-                      <HighlightItem>Templated entities/'prefabs'</HighlightItem>
+                      <HighlightItem>C#</HighlightItem>
+                      <HighlightItem>Unity</HighlightItem>
+                      <HighlightItem>Published</HighlightItem>
                     </div>
                   </div>
                 </div>
@@ -227,11 +226,10 @@ export default function LayoutDefault({ children }: { children: React.ReactNode 
                   <div className={"block"} onClick={(e) => (window.location.hash = "#planetary-exploration")}>
                     <FadeImg className={"image"} src={imgLevelEditor} alt={"Planetary Exploration"} />
                     <div className={"content"}>
-                      <h2>Planetary Exploration</h2>
-                      <HighlightItem>Entity Component System</HighlightItem>
-                      <HighlightItem>Play-in-viewport/simulate</HighlightItem>
-                      <HighlightItem>Multiple level editors simultaneously</HighlightItem>
-                      <HighlightItem>Templated entities/'prefabs'</HighlightItem>
+                      <h2>Planetary Exploration Nanobot</h2>
+                      <HighlightItem>C++</HighlightItem>
+                      <HighlightItem>Unreal Engine</HighlightItem>
+                      <HighlightItem>Team project</HighlightItem>
                     </div>
                   </div>
                 </div>
@@ -239,11 +237,10 @@ export default function LayoutDefault({ children }: { children: React.ReactNode 
                   <div className={"block"}>
                     <FadeImg className={"image"} src={imgLevelEditor} alt={"Level editor"} />
                     <div className={"content"}>
-                      <h2>Level Editor</h2>
-                      <HighlightItem>Entity Component System</HighlightItem>
-                      <HighlightItem>Play-in-viewport/simulate</HighlightItem>
-                      <HighlightItem>Multiple level editors simultaneously</HighlightItem>
-                      <HighlightItem>Templated entities/'prefabs'</HighlightItem>
+                      <h2>Vehicle system</h2>
+                      <HighlightItem>C#</HighlightItem>
+                      <HighlightItem>Unity</HighlightItem>
+                      <HighlightItem>Research project</HighlightItem>
                     </div>
                   </div>
                 </div>
@@ -312,7 +309,7 @@ export default function LayoutDefault({ children }: { children: React.ReactNode 
             </div>
 
             <div id={"billboarders-behaviour-tree"}>
-              <h2 className={"heading"}>Behaviour Tree (character logic)</h2>
+              <h2 className={"heading"}>Behaviour Tree</h2>
               <p>
                 <FadeImg
                   src={gifBillboardersBehaviourTree}
@@ -350,6 +347,26 @@ export default function LayoutDefault({ children }: { children: React.ReactNode 
                   </li>
                 </ul>
               </div>
+            </div>
+
+            <div id={"billboarders-game-object-pooling"}>
+              <h2 className={"heading"}>Game Object pooling</h2>
+            </div>
+
+            <div id={"billboarders-event-bus"}>
+              <h2 className={"heading"}>Event Bus</h2>
+            </div>
+
+            <div id={"billboarders-game-systems"}>
+              <h2 className={"heading"}>Game Systems</h2>
+            </div>
+
+            <div id={"billboarders-navmesh-solution"}>
+              <h2 className={"heading"}>NavMesh solution</h2>
+            </div>
+
+            <div id={"billboarders-3d-depth-effect"}>
+              <h2 className={"heading"}>3D Depth effect</h2>
             </div>
 
             <div id={"highway-crash"}>
