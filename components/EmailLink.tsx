@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useState } from "react";
+import React, { useEffect, useLayoutEffect, useState } from "react";
 
 const magic = 10752 >>> 8;
 
@@ -24,7 +24,7 @@ export const EmailLink = () => {
   const [className, setClassName] = useState("blurred");
 
   // Makes it so spambots have to evaluate javascript to find the email address
-  useLayoutEffect(() => {
+  useEffect(() => {
     setHref(emailLink);
     setText(emailStr);
     setClassName("");
