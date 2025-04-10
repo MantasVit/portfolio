@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const magic = 10752 >>> 8;
 
@@ -11,7 +11,9 @@ const encodeEmail = (email: string) => {
 };
 
 // Reduces spambots finding the email address a little
-const emailStr = [71, 69, 73, 4, 70, 67, 75, 71, 77, 106, 89, 69, 24, 91, 75, 71]
+const emailStr = [
+  71, 69, 73, 4, 70, 67, 75, 71, 77, 106, 89, 75, 94, 68, 75, 71, 89, 95, 67, 73, 67, 92, 79, 65, 94, 67, 92,
+]
   .reverse()
   .map((c) => String.fromCodePoint(c ^ magic))
   .join("");
@@ -19,7 +21,7 @@ const emailStr = [71, 69, 73, 4, 70, 67, 75, 71, 77, 106, 89, 69, 24, 91, 75, 71
 const emailLink = [109, 97, 105, 108, 116, 111, 58].map((c) => String.fromCodePoint(c)).join("") + emailStr;
 
 export const EmailLink = () => {
-  const [text, setText] = useState("xxxxxx@gmail.com");
+  const [text, setText] = useState("xxxxxxxxxxxxxxxxx@gmail.com");
   const [href, setHref] = useState<string | undefined>(undefined);
   const [className, setClassName] = useState("blurred");
 
