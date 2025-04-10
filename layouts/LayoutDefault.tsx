@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 import "./style.scss";
 
-import React, { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import "@fontsource/abel";
 import "@fontsource/quicksand/300.css";
 import "@fontsource/nunito";
@@ -307,17 +307,15 @@ export default function LayoutDefault({ children }: { children: React.ReactNode 
                   }}
                 />
               </div>
-              <p>
-                <span>
-                  <strong>Platform(s):</strong> Mobile/WebGL
-                </span>
-                <span>
-                  <strong>Team Size:</strong> 3
-                </span>
-                <span>
-                  <strong>Primary role(s):</strong> Gameplay programming/design
-                </span>
-              </p>
+              <div>
+                <strong>Platform(s):</strong> Mobile/WebGL
+              </div>
+              <div>
+                <strong>Team Size:</strong> 3
+              </div>
+              <div>
+                <strong>Primary role(s):</strong> Gameplay programming/design
+              </div>
               <p>
                 Billboarders is a commercially released project developed alongside two artists. It is an idle game with
                 a unique blend of 2D and 3D features.
