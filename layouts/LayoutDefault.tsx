@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 import "./style.scss";
 
-import React, { useCallback, useLayoutEffect, useMemo, useRef, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import "@fontsource/abel";
 import "@fontsource/quicksand/300.css";
 import "@fontsource/nunito";
@@ -25,6 +25,7 @@ import gifBillboardersBehaviourTree from "../assets/billboarders-behaviour-tree.
 import { FadeImg } from "../components/FadeImg";
 import { HighlightItem } from "../components/HighlightItem";
 import { EmailLink } from "../components/EmailLink";
+import { LazyVideo } from "../components/LazyVideo";
 
 config.autoAddCss = false;
 
@@ -162,7 +163,7 @@ export default function LayoutDefault({ children }: { children: React.ReactNode 
     [revalidateClickedItem, scrolling, tocEntries],
   );
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     const options = {
       root: null,
       rootMargin: "0px",
@@ -308,19 +309,16 @@ export default function LayoutDefault({ children }: { children: React.ReactNode 
           <div className={"content"}>
             <div id={"billboarders"}>
               <h1 className={"heading"}>Billboarders</h1>
-              <video
-                src={videoBillboarders}
-                onMouseEnter={(e) => {
-                  (e.target as HTMLVideoElement).setAttribute("preload", "metadata");
-                }}
-                preload={"none"}
-                controls={true}
-                poster={posterBillboarders}
-                style={{
-                  width: "100%",
-                  aspectRatio: 1920 / 1080,
-                }}
-              />
+              <div>
+                <LazyVideo
+                  src={videoBillboarders}
+                  poster={posterBillboarders}
+                  style={{
+                    width: "100%",
+                    aspectRatio: 1920 / 1080,
+                  }}
+                />
+              </div>
               <div className={"row"}>
                 <div className={"node language"}>C#</div>
                 <div className={"node engine"}>Unity</div>
