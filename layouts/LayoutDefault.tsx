@@ -11,7 +11,15 @@ import { config } from "@fortawesome/fontawesome-svg-core";
 import imgLevelEditor from "../assets/ft_leveleditor.jpg";
 import imgBillboarders from "../assets/billboarders.png";
 import imgHighwayCrash from "../assets/highway-crash.png";
+import imgProtodev from "../assets/protodev.jpg";
+import imgVehicle from "../assets/vehicle.png";
+import imgConqueredLands from "../assets/conquered-lands.png";
 import videoBillboarders from "../assets/billboarders-video.mp4";
+import diagramGameSystemsBillboarders from "../assets/billboarders-game-systems-diagram.png"
+import imgNavMeshBillboarders from "../assets/billboarders-navmesh-img.png"
+import gifNavMeshBillboarders from "../assets/billboarders-navmesh-gif.gif"
+import gif3dDepth1Billboarders from "../assets/billboarders-3d-depth-gif1.gif"
+import gif3dDepth2Billboarders from "../assets/billboarders-3d-depth-gif2.gif"
 import posterBillboarders from "../assets/billboarders-video-poster.jpg";
 import gifBillboardersBehaviourTree from "../assets/billboarders-behaviour-tree.gif";
 import { FadeImg } from "../components/FadeImg";
@@ -40,7 +48,7 @@ export default function LayoutDefault({ children }: { children: React.ReactNode 
         name: "Behaviour Tree",
         indent: 1,
       },
-      "billboarders-game-object-pool": {
+      "billboarders-game-object-pooling": {
         name: "Game Object pooling",
         indent: 1,
       },
@@ -221,11 +229,12 @@ export default function LayoutDefault({ children }: { children: React.ReactNode 
                   <div className={"block"} onClick={(e) => (window.location.hash = "#billboarders")}>
                     <FadeImg className={"image"} src={imgBillboarders} alt={"Billboarders"} />
                     <div className={"content"}>
-                      <h2>Billboarders</h2>
-                      <HighlightItem>C#</HighlightItem>
-                      <HighlightItem>Unity</HighlightItem>
-                      <HighlightItem>Team project</HighlightItem>
-                      <HighlightItem>Published</HighlightItem>
+                      <div className={"row"}>
+                        <div className={"node language"}>C#</div>
+                        <div className={"node engine"}>Unity</div>
+                        <div className={"node team-project"}>Team project</div>
+                        <div className={"node published"}>Published</div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -233,10 +242,11 @@ export default function LayoutDefault({ children }: { children: React.ReactNode 
                   <div className={"block"} onClick={(e) => (window.location.hash = "#highway-crash")}>
                     <FadeImg className={"image"} src={imgHighwayCrash} alt={"Highway Crash"} />
                     <div className={"content"}>
-                      <h2>Highway Crash</h2>
-                      <HighlightItem>C#</HighlightItem>
-                      <HighlightItem>Unity</HighlightItem>
-                      <HighlightItem>Published</HighlightItem>
+                      <div className={"row"}>
+                        <div className={"node language"}>C#</div>
+                        <div className={"node engine"}>Unity</div>
+                        <div className={"node published"}>Published</div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -244,23 +254,25 @@ export default function LayoutDefault({ children }: { children: React.ReactNode 
               <div className={"row"}>
                 <div className={"col"}>
                   <div className={"block"} onClick={(e) => (window.location.hash = "#planetary-exploration")}>
-                    <FadeImg className={"image"} src={imgLevelEditor} alt={"Planetary Exploration"} />
+                    <FadeImg className={"image"} src={imgProtodev} alt={"Planetary Exploration"} />
                     <div className={"content"}>
-                      <h2>Planetary Exploration Nanobot</h2>
-                      <HighlightItem>C++</HighlightItem>
-                      <HighlightItem>Unreal Engine</HighlightItem>
-                      <HighlightItem>Team project</HighlightItem>
+                      <div className={"row"}>
+                        <div className={"node language"}>C++</div>
+                        <div className={"node engine"}>Unreal Engine</div>
+                        <div className={"node team-project"}>Team project</div>
+                      </div>
                     </div>
                   </div>
                 </div>
                 <div className={"col"}>
                   <div className={"block"}>
-                    <FadeImg className={"image"} src={imgLevelEditor} alt={"Level editor"} />
+                    <FadeImg className={"image"} src={imgVehicle} alt={"Level editor"} />
                     <div className={"content"}>
-                      <h2>Vehicle system</h2>
-                      <HighlightItem>C#</HighlightItem>
-                      <HighlightItem>Unity</HighlightItem>
-                      <HighlightItem>Research project</HighlightItem>
+                      <div className={"row"}>
+                        <div className={"node language"}>C#</div>
+                        <div className={"node engine"}>Unity</div>
+                        <div className={"node research"}>Research</div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -270,7 +282,7 @@ export default function LayoutDefault({ children }: { children: React.ReactNode 
         </div>
 
         <div className={"background-section"} id={"about-me"}>
-          <h1 className={"heading"}>About me</h1>
+          <h1 className={"heading"}><strong>About me</strong></h1>
           <div className={"text"}>
             <p>
               Hi, I'm Mantas Vitkevicius — a game developer with hands-on experience shipping games and a strong focus
@@ -296,32 +308,39 @@ export default function LayoutDefault({ children }: { children: React.ReactNode 
           <div className={"content"}>
             <div id={"billboarders"}>
               <h1 className={"heading"}>Billboarders</h1>
-              <p>
-                <video
-                  src={videoBillboarders}
-                  onMouseEnter={(e) => {
-                    (e.target as HTMLVideoElement).setAttribute("preload", "metadata");
-                  }}
-                  preload={"none"}
-                  controls={true}
-                  poster={posterBillboarders}
-                  style={{
-                    width: "100%",
-                    aspectRatio: 1920 / 1080,
-                  }}
-                />
-              </p>
-              <p>
-                <span>
-                  <strong>Platform(s):</strong> Mobile/WebGL
-                </span>
-                <span>
-                  <strong>Team Size:</strong> 3
-                </span>
-                <span>
-                  <strong>Primary role(s):</strong> Gameplay programming/design
-                </span>
-              </p>
+              <video
+                src={videoBillboarders}
+                onMouseEnter={(e) => {
+                  (e.target as HTMLVideoElement).setAttribute("preload", "metadata");
+                }}
+                preload={"none"}
+                controls={true}
+                poster={posterBillboarders}
+                style={{
+                  width: "100%",
+                  aspectRatio: 1920 / 1080,
+                }}
+              />
+              <div className={"row"}>
+                <div className={"node language"}>C#</div>
+                <div className={"node engine"}>Unity</div>
+                <div className={"node team-project"}>Team project</div>
+                 <div className={"node published"}>Published</div>
+              </div>
+              <div className={"info-content"}>
+                <div className={"info-row"}>
+                  <div className={"p1"}><strong>Platform(s):</strong></div>
+                  <div className={"p1"}>Mobile/WebGL</div>
+                </div>
+                <div className={"info-row"}>
+                  <div className={"p1"}><strong>Team Size:</strong></div>
+                  <div className={"p1"}>3</div>
+                </div>
+                <div className={"info-row"}>
+                  <div className={"p1"}><strong>Primary role(s):</strong></div>
+                  <div className={"p1"}>Gameplay programming/design</div>
+                </div>
+              </div>
               <p>
                 Billboarders is a commercially released project developed alongside two artists. It is an idle game with
                 a unique blend of 2D and 3D features.
@@ -331,13 +350,7 @@ export default function LayoutDefault({ children }: { children: React.ReactNode 
             <div id={"billboarders-behaviour-tree"}>
               <h2 className={"heading"}>Behaviour Tree</h2>
               <p>
-                <FadeImg
-                  src={gifBillboardersBehaviourTree}
-                  style={{
-                    width: "100%",
-                    aspectRatio: 818 / 447,
-                  }}
-                />
+                <FadeImg className={"image1"} src={gifBillboardersBehaviourTree}></FadeImg>
               </p>
               <p>
                 I implemented a behaviour tree system that can be applied to any object that requires specific
@@ -371,22 +384,75 @@ export default function LayoutDefault({ children }: { children: React.ReactNode 
 
             <div id={"billboarders-game-object-pooling"}>
               <h2 className={"heading"}>Game Object pooling</h2>
+              <p>
+              Made use of Unitys IObjectPool interface that allowed me to reduce the amount of Instantiation calls.
+              Most of the objects have been optimised to spawn during loading screen, massively optimising runtime
+              performance.
+              </p>
             </div>
 
             <div id={"billboarders-event-bus"}>
               <h2 className={"heading"}>Event Bus</h2>
+              <p>
+              Implemented an event bus to allow clean communication between certain parts of the game. This was mostly
+              used between the UI and game logic, allowing me to effectively separate parts of the game from direct
+              communication.
+              </p>
             </div>
 
             <div id={"billboarders-game-systems"}>
               <h2 className={"heading"}>Game Systems</h2>
+              <p>
+              The project contains multiple game systems, all of which have a serialized set of data that is saved at
+              preset intervals or loaded on game start. PlayerManager is a standard non-MonoBehaviour class in charge
+              of all things related to the player.
+              </p>
+              <p>
+                <FadeImg className={"image1"} src={diagramGameSystemsBillboarders}></FadeImg>
+              </p>
+              <p>
+              Each specialised system manager contains functionality related to their specific use, with common
+              functionality such as LoadData and SaveData implemented through a IGameSystem interface. They have no
+              relationship between themselves and can only be accessed directly through the PlayerManager. They also
+              have events integrated that will activate in classes that are registered to said events.
+              </p>
             </div>
 
             <div id={"billboarders-navmesh-solution"}>
               <h2 className={"heading"}>NavMesh solution</h2>
+              <p>
+              I wanted to use a NavMesh system for character navigation, however, as the base Unity NavMesh system
+              doesn't support integration on a flat 2D orientation, I implemented a custom solution found at:
+              <strong>https://github.com/h8man/NavMeshPlus</strong>
+              </p>
+              <div className={"sub-content2"}>
+                <FadeImg src={gifNavMeshBillboarders}/>
+                <p className={"p3"}>
+                  This solution allowed me to fully implement NavMeshAgents using 2D assets, with a few adjustments.
+                </p>
+                <FadeImg src={imgNavMeshBillboarders}/>
+                <p className={"p3"}>
+                  Agent position is set at the characters feet with it rotated to point towards the camera.
+                </p>
+              </div>
             </div>
 
             <div id={"billboarders-3d-depth-effect"}>
               <h2 className={"heading"}>3D Depth effect</h2>
+              <p>
+              Made use of 3 dimensions by implementing object depth on the Z axis. This allowed me to implement
+              an effect where objects higher on the Y axis are visibly smaller and look further away from the camera.
+              </p>
+              <p>
+                <FadeImg className={"image2"} src={gif3dDepth1Billboarders}></FadeImg>
+              </p>
+              <p>
+                <FadeImg className={"image2"} src={gif3dDepth2Billboarders}></FadeImg>
+              </p>
+              <p>
+              Using this system I scaled character size and speed depending on their current depth. This is also used
+              with static objects such as trees, on a separate component that scales their size at the start of a level.
+              </p>
             </div>
 
             <div id={"highway-crash"}>

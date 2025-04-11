@@ -109,13 +109,64 @@ h1 {
   font-size: 2.5rem;
 }
 
+.p1 {
+  font-size: 18px;
+}
+
+.p2 {
+  font-size: 16px;
+}
+
+.p3 {
+  font-size: 14px;
+  font-style: italic;
+  margin-block-end: 1em;
+  margin-block-start: 0em;
+}
+
 img.loading {
   opacity: 0;
+  width: 100%;
 }
 
 img.loaded {
   opacity: 1;
   transition: opacity 0.6s ease;
+  width: 100%;
+}
+
+.node {
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  text-align: center;
+  border-radius: 5px;
+  font-size: 15px;
+}
+
+.node.language {
+  background: #00599c;
+}
+
+.node.engine {
+  background: #222222;
+}
+
+.node.team-project {
+  background: brown;
+}
+
+.node.multiplayer {
+  background: purple;
+}
+
+.node.research {
+  background: green;
+}
+
+.node.published {
+  background: #239120;
 }
 
 #intro-section {
@@ -147,6 +198,14 @@ img.loaded {
     }
   }
 
+  @media screen and (max-width: 1280px) {
+    .text {
+      h1 {
+        font-size: 44px;
+      }
+    }
+  }
+
   .highlights {
     max-width: 1200px;
     padding-bottom: 25px;
@@ -171,13 +230,13 @@ img.loaded {
         border-radius: 10px;
         display: inline-flex;
         flex-direction: column;
-        gap: 20px;
+        gap: 5px;
         cursor: pointer;
         user-select: none;
+        padding: 7px;
 
         .image {
-          border-bottom-left-radius: 10px;
-          border-top-left-radius: 10px;
+          border-radius: 10px;
           height: 195px;
           width: 335px;
           object-fit: cover;
@@ -185,9 +244,14 @@ img.loaded {
         }
 
         .content {
-          padding: 8px;
-          font-size: 13px;
-          width: 235px;
+          padding: 4px;
+          width: fit-content;
+
+          .row {
+            display: flex;
+            flex-direction: row;
+            gap: 5px;
+          }
         }
 
         .check {
@@ -200,7 +264,7 @@ img.loaded {
       .row {
         .col {
           .block {
-            flex-direction: row;
+            flex-direction: column;
           }
         }
       }
@@ -222,12 +286,27 @@ img.loaded {
       }
     }
   }
+
+  @media screen and (max-width: 1280px) {
+    .highlights {
+      gap: 15px;
+      .row {
+        gap: 15px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .intro {
+    padding: 0 15px;
+  }
 }
 
 .background-section {
   background: linear-gradient(#7a3232, #5c3242);
   margin-bottom: 50px;
-  padding: 50px;
+  padding: 15px 25px;
   width: 100%;
 
   h1 {
@@ -237,6 +316,12 @@ img.loaded {
   .text {
     max-width: 1200px;
     margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .background-section {
+    padding: 15px;
   }
 }
 
@@ -254,6 +339,75 @@ img.loaded {
   .content {
     flex-grow: 1;
   }
+
+  .row {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    padding-top: 1px;
+    padding-bottom: 1em;
+  }
+
+  .sub-content1 {
+    width: 75%;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .sub-content2 {
+    width: 50%;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .sub-content3 {
+    
+  }
+
+  .image1 {
+    width: 75%;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .image2 {
+    width: 50%;
+    display: block;
+    margin: 0 auto;
+  }
+
+  h1 {
+    text-align: center;
+    font-weight: bold;
+    padding-bottom: 10px;
+  }
+
+  h2 {
+    padding-top: 50px;
+    font-weight: bold;
+    border-bottom: 2px solid #ff6d6d;
+    padding-bottom: 2px;
+  }
+
+  .info-content {
+    padding-top: 1em;
+    padding-bottom: 1em;
+  }
+
+  .info-row {
+    display: grid;
+    grid-template-columns: 150px 1fr; /* fixed label width + flexible value */
+    align-items: start; /* or center depending on your vibe */
+  }
+
+  .title {
+    font-weight: bold;
+  }
+
+  .text {
+    font-weight: 500;
+  }
+  
 
   .toc {
     position: sticky;
@@ -325,6 +479,28 @@ img.loaded {
           }
         }
       }
+    }
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .main-section {
+    padding: 0 15px 15px;
+
+    .image1 {
+      width: 90%;
+    }
+
+    .image2 {
+      width: 80%;
+    }
+
+    .sub-content1{
+      width: 90%;
+    }
+
+    .sub-content2{
+      width: 80%;
     }
   }
 }
