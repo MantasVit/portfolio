@@ -136,25 +136,31 @@ h1 {
 }
 
 .node {
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 0.4rem;
+  padding-right: 0.4rem;
   padding-top: 0px;
   padding-bottom: 0px;
   text-align: center;
-  border-radius: 5px;
-  font-size: 15px;
+  border-radius: 0.3rem;
+  font-size: 0.9rem;
+}
+
+@media screen and (max-width: 1000px) {
+  .node {
+    font-size: 0.8rem;
+  }
 }
 
 .node.language {
-  background: #00599c;
+  background: #0366b1;
 }
 
 .node.engine {
-  background: #222222;
+  background: #79238f;
 }
 
 .node.team-project {
-  background: brown;
+  background: rgb(158, 40, 40);
 }
 
 .node.multiplayer {
@@ -162,11 +168,11 @@ h1 {
 }
 
 .node.research {
-  background: green;
+  background: rgb(18, 117, 92);
 }
 
 .node.published {
-  background: #239120;
+  background: #1c8619;
 }
 
 .lazy-video {
@@ -197,19 +203,11 @@ h1 {
 
     h1 {
       display: inline-block;
-      padding: 0 25px;
+      padding: 0 1rem;
       background: #181818;
-      border-radius: 10px;
-      font-size: 55px;
+      border-radius: 0.5rem;
+      font-size: 3.5rem;
       font-family: Abel, sans-serif;
-    }
-  }
-
-  @media screen and (max-width: 1280px) {
-    .text {
-      h1 {
-        font-size: 44px;
-      }
     }
   }
 
@@ -233,32 +231,35 @@ h1 {
       }
 
       .block {
-        background-color: #181818;
-        border-radius: 10px;
+        background-color: #1f1c1c;
+        border-radius: 15px;
         display: inline-flex;
-        flex-direction: column;
         gap: 5px;
         cursor: pointer;
         user-select: none;
-        padding: 7px;
+        padding: 5px;
+        flex-direction: column;
 
         .image {
           border-radius: 10px;
-          height: 195px;
-          width: 335px;
           object-fit: cover;
           overflow: hidden;
+          width: 440px;
+          height: 250px;
+          object-position: top;
         }
 
         .content {
-          padding: 4px;
           width: fit-content;
+        }
 
-          .row {
-            display: flex;
-            flex-direction: row;
-            gap: 5px;
-          }
+        .row {
+          display: flex;
+          flex-direction: row;
+          gap: 5px;
+          width: 100%;
+          margin-left: 5px;
+          padding: 2px 0;
         }
 
         .check {
@@ -267,17 +268,7 @@ h1 {
       }
     }
 
-    @media screen and (min-width: 640px) {
-      .row {
-        .col {
-          .block {
-            flex-direction: column;
-          }
-        }
-      }
-    }
-
-    @media screen and (min-width: 1280px) {
+    @media screen and (min-width: 750px) {
       .row {
         flex-direction: row;
 
@@ -294,7 +285,13 @@ h1 {
     }
   }
 
-  @media screen and (max-width: 1280px) {
+  @media screen and (max-width: 400px) {
+    .text {
+      h1 {
+        font-size: 11vw;
+      }
+    }
+
     .highlights {
       gap: 15px;
       .row {
@@ -304,16 +301,46 @@ h1 {
   }
 }
 
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 1000px) {
   .intro {
     padding: 0 15px;
+    .highlights {
+      gap: 25px;
+      .row {
+        gap: 25px;
+        .block {
+          .image {
+            width: 335px;
+            height: 188px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .intro {
+    padding: 0 10px;
+    .highlights {
+      gap: 15px;
+      .row {
+        gap: 15px;
+        .block {
+          .image {
+            width: 90vw;
+            height: 50.6vw;
+          }
+        }
+      }
+    }
   }
 }
 
 .background-section {
   background: linear-gradient(#7a3232, #5c3242);
-  margin-bottom: 50px;
   padding: 15px 25px;
+  margin-bottom: 50px;
   width: 100%;
 
   h1 {
@@ -332,6 +359,12 @@ h1 {
   }
 }
 
+@media screen and (max-width: 600px) {
+  .background-section {
+    padding: 10px;
+  }
+}
+
 .main-section {
   max-width: 1200px;
   margin: 0 auto;
@@ -345,6 +378,20 @@ h1 {
 
   .content {
     flex-grow: 1;
+    max-width: 100%;
+  }
+
+  .gap {
+    height: 100px;
+  }
+
+  .separator {
+    width: 100%;
+    height: 3px;
+    background-color: #ff6d6d;
+    border-radius: 10px;
+    margin-top: 175px;
+    margin-bottom: 25px;
   }
 
   .row {
@@ -403,18 +450,13 @@ h1 {
 
   .info-row {
     display: grid;
-    grid-template-columns: 150px 1fr; /* fixed label width + flexible value */
-    align-items: start; /* or center depending on your vibe */
-  }
+    grid-template-columns: 125px 1fr;
+    align-items: start;
 
-  .title {
-    font-weight: bold;
+    .title {
+      font-weight: bold;
+    }
   }
-
-  .text {
-    font-weight: 500;
-  }
-  
 
   .toc {
     position: sticky;
@@ -422,7 +464,7 @@ h1 {
     top: 20px;
     display: none;
 
-    @media screen and (min-width: 480px) {
+    @media screen and (min-width: 600px) {
       & {
         display: block;
       }
@@ -508,6 +550,28 @@ h1 {
 
     .sub-content2{
       width: 80%;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .main-section {
+    padding: 0 10px 10px;
+
+    .image1 {
+      width: 95%;
+    }
+
+    .image2 {
+      width: 90%;
+    }
+
+    .sub-content1{
+      width: 95%;
+    }
+
+    .sub-content2{
+      width: 90%;
     }
   }
 }

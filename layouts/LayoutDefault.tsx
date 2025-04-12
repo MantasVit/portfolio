@@ -11,7 +11,7 @@ import { config } from "@fortawesome/fontawesome-svg-core";
 import imgLevelEditor from "../assets/ft_leveleditor.jpg";
 import imgBillboarders from "../assets/billboarders.png";
 import imgHighwayCrash from "../assets/highway-crash.png";
-import imgProtodev from "../assets/protodev.jpg";
+import imgProtodev from "../assets/protodev.png";
 import imgVehicle from "../assets/vehicle.png";
 import imgConqueredLands from "../assets/conquered-lands.png";
 import videoBillboarders from "../assets/billboarders-video.mp4";
@@ -22,6 +22,15 @@ import gif3dDepth1Billboarders from "../assets/billboarders-3d-depth-gif1.gif"
 import gif3dDepth2Billboarders from "../assets/billboarders-3d-depth-gif2.gif"
 import posterBillboarders from "../assets/billboarders-video-poster.jpg";
 import gifBillboardersBehaviourTree from "../assets/billboarders-behaviour-tree.gif";
+import videoProtodev from "../assets/protodev-video.mp4"
+import posterProtodev from "../assets/protodev-video-poster.png"
+import gifVehicle1 from "../assets/vehicle-gif1.gif"
+import gifVehicle2 from "../assets/vehicle-gif2.gif"
+import gifVehicle3 from "../assets/vehicle-gif3.gif"
+import imgResearch1Vehicle from "../assets/vehicle-research1.png"
+import imgResearch2Vehicle from "../assets/vehicle-research2.png"
+import imgResearch3Vehicle from "../assets/vehicle-research3.png"
+import imgResearch4Vehicle from "../assets/vehicle-research4.png"
 import { FadeImg } from "../components/FadeImg";
 import { HighlightItem } from "../components/HighlightItem";
 import { EmailLink } from "../components/EmailLink";
@@ -46,27 +55,27 @@ export default function LayoutDefault({ children }: { children: React.ReactNode 
         name: "Billboarders",
       },
       "billboarders-behaviour-tree": {
-        name: "Behaviour Tree",
+        name: "- Behaviour Tree",
         indent: 1,
       },
       "billboarders-game-object-pooling": {
-        name: "Game Object pooling",
+        name: "- Game Object pooling",
         indent: 1,
       },
       "billboarders-event-bus": {
-        name: "Event Bus",
+        name: "- Event Bus",
         indent: 1,
       },
       "billboarders-game-systems": {
-        name: "Game Systems",
+        name: "- Game Systems",
         indent: 1,
       },
       "billboarders-navmesh-solution": {
-        name: "NavMesh solution",
+        name: "- NavMesh solution",
         indent: 1,
       },
       "billboarders-3d-depth-effect": {
-        name: "3D Depth effect",
+        name: "- 3D Depth effect",
         indent: 1,
       },
       "highway-crash": {
@@ -75,8 +84,16 @@ export default function LayoutDefault({ children }: { children: React.ReactNode 
       "planetary-exploration": {
         name: "Planetary Exploration",
       },
-      "conquered-lands": {
-        name: "Conquered lands",
+      "vehicle-system": {
+        name: "Vehicle driving system",
+      },
+      "vehicle-physics": {
+        name: "- Physics implementation",
+        indent: 1,
+      },
+      "vehicle-research": {
+        name: "- Research",
+        indent: 1,
       },
     }),
     [],
@@ -229,13 +246,11 @@ export default function LayoutDefault({ children }: { children: React.ReactNode 
                 <div className={"col"}>
                   <div className={"block"} onClick={(e) => (window.location.hash = "#billboarders")}>
                     <FadeImg className={"image"} src={imgBillboarders} alt={"Billboarders"} />
-                    <div className={"content"}>
-                      <div className={"row"}>
-                        <div className={"node language"}>C#</div>
-                        <div className={"node engine"}>Unity</div>
-                        <div className={"node team-project"}>Team project</div>
-                        <div className={"node published"}>Published</div>
-                      </div>
+                    <div className={"row"}>
+                      <div className={"node language"}>C#</div>
+                      <div className={"node engine"}>Unity</div>
+                      <div className={"node team-project"}>Team project</div>
+                      <div className={"node published"}>Published</div>
                     </div>
                   </div>
                 </div>
@@ -266,8 +281,8 @@ export default function LayoutDefault({ children }: { children: React.ReactNode 
                   </div>
                 </div>
                 <div className={"col"}>
-                  <div className={"block"}>
-                    <FadeImg className={"image"} src={imgVehicle} alt={"Level editor"} />
+                  <div className={"block"} onClick={(e) => (window.location.hash = "#vehicle-system")}>
+                    <FadeImg className={"image"} src={imgVehicle} alt={"Vehicle system"} />
                     <div className={"content"}>
                       <div className={"row"}>
                         <div className={"node language"}>C#</div>
@@ -315,7 +330,7 @@ export default function LayoutDefault({ children }: { children: React.ReactNode 
                   poster={posterBillboarders}
                   style={{
                     width: "100%",
-                    aspectRatio: 1920 / 1080,
+                    aspectRatio: 16 / 9,
                   }}
                 />
               </div>
@@ -323,20 +338,20 @@ export default function LayoutDefault({ children }: { children: React.ReactNode 
                 <div className={"node language"}>C#</div>
                 <div className={"node engine"}>Unity</div>
                 <div className={"node team-project"}>Team project</div>
-                 <div className={"node published"}>Published</div>
+                <div className={"node published"}>Published</div>
               </div>
               <div className={"info-content"}>
                 <div className={"info-row"}>
-                  <div className={"p1"}><strong>Platform(s):</strong></div>
-                  <div className={"p1"}>Mobile/WebGL</div>
+                  <div className={"title"}>Platform(s):</div>
+                  Mobile/WebGL
                 </div>
                 <div className={"info-row"}>
-                  <div className={"p1"}><strong>Team Size:</strong></div>
-                  <div className={"p1"}>3</div>
+                  <div className={"title"}>Team size:</div>
+                  3
                 </div>
                 <div className={"info-row"}>
-                  <div className={"p1"}><strong>Primary role(s):</strong></div>
-                  <div className={"p1"}>Gameplay programming/design</div>
+                  <div className={"title"}>Primary role(s):</div>
+                  Gameplay programming/design
                 </div>
               </div>
               <p>
@@ -383,52 +398,52 @@ export default function LayoutDefault({ children }: { children: React.ReactNode 
             <div id={"billboarders-game-object-pooling"}>
               <h2 className={"heading"}>Game Object pooling</h2>
               <p>
-              Made use of Unitys IObjectPool interface that allowed me to reduce the amount of Instantiation calls.
-              Most of the objects have been optimised to spawn during loading screen, massively optimising runtime
-              performance.
+                Made use of Unitys IObjectPool interface that allowed me to reduce the amount of Instantiation calls.
+                Most of the objects have been optimised to spawn during loading screen, massively optimising runtime
+                performance.
               </p>
             </div>
 
             <div id={"billboarders-event-bus"}>
               <h2 className={"heading"}>Event Bus</h2>
               <p>
-              Implemented an event bus to allow clean communication between certain parts of the game. This was mostly
-              used between the UI and game logic, allowing me to effectively separate parts of the game from direct
-              communication.
+                Implemented an event bus to allow clean communication between certain parts of the game. This was mostly
+                used between the UI and game logic, allowing me to effectively separate parts of the game from direct
+                communication.
               </p>
             </div>
 
             <div id={"billboarders-game-systems"}>
               <h2 className={"heading"}>Game Systems</h2>
               <p>
-              The project contains multiple game systems, all of which have a serialized set of data that is saved at
-              preset intervals or loaded on game start. PlayerManager is a standard non-MonoBehaviour class in charge
-              of all things related to the player.
+                The project contains multiple game systems, all of which have a serialized set of data that is saved at
+                preset intervals or loaded on game start. PlayerManager is a standard non-MonoBehaviour class in charge
+                of all things related to the player.
               </p>
               <p>
                 <FadeImg className={"image1"} src={diagramGameSystemsBillboarders}></FadeImg>
               </p>
               <p>
-              Each specialised system manager contains functionality related to their specific use, with common
-              functionality such as LoadData and SaveData implemented through a IGameSystem interface. They have no
-              relationship between themselves and can only be accessed directly through the PlayerManager. They also
-              have events integrated that will activate in classes that are registered to said events.
+                Each specialised system manager contains functionality related to their specific use, with common
+                functionality such as LoadData and SaveData implemented through a IGameSystem interface. They have no
+                relationship between themselves and can only be accessed directly through the PlayerManager. They also
+                have events integrated that will activate in classes that are registered to said events.
               </p>
             </div>
 
             <div id={"billboarders-navmesh-solution"}>
               <h2 className={"heading"}>NavMesh solution</h2>
               <p>
-              I wanted to use a NavMesh system for character navigation, however, as the base Unity NavMesh system
-              doesn't support integration on a flat 2D orientation, I implemented a custom solution found at:
-              <strong>https://github.com/h8man/NavMeshPlus</strong>
+                I wanted to use a NavMesh system for character navigation, however, as the base Unity NavMesh system
+                doesn't support integration on a flat 2D orientation, I implemented a custom solution found at:
+                <strong>https://github.com/h8man/NavMeshPlus</strong>
               </p>
               <div className={"sub-content2"}>
-                <FadeImg src={gifNavMeshBillboarders}/>
+                <FadeImg src={gifNavMeshBillboarders} />
                 <p className={"p3"}>
                   This solution allowed me to fully implement NavMeshAgents using 2D assets, with a few adjustments.
                 </p>
-                <FadeImg src={imgNavMeshBillboarders}/>
+                <FadeImg src={imgNavMeshBillboarders} />
                 <p className={"p3"}>
                   Agent position is set at the characters feet with it rotated to point towards the camera.
                 </p>
@@ -438,8 +453,8 @@ export default function LayoutDefault({ children }: { children: React.ReactNode 
             <div id={"billboarders-3d-depth-effect"}>
               <h2 className={"heading"}>3D Depth effect</h2>
               <p>
-              Made use of 3 dimensions by implementing object depth on the Z axis. This allowed me to implement
-              an effect where objects higher on the Y axis are visibly smaller and look further away from the camera.
+                Made use of 3 dimensions by implementing object depth on the Z axis. This allowed me to implement
+                an effect where objects higher on the Y axis are visibly smaller and look further away from the camera.
               </p>
               <p>
                 <FadeImg className={"image2"} src={gif3dDepth1Billboarders}></FadeImg>
@@ -448,138 +463,162 @@ export default function LayoutDefault({ children }: { children: React.ReactNode 
                 <FadeImg className={"image2"} src={gif3dDepth2Billboarders}></FadeImg>
               </p>
               <p>
-              Using this system I scaled character size and speed depending on their current depth. This is also used
-              with static objects such as trees, on a separate component that scales their size at the start of a level.
+                Using this system I scaled character size and speed depending on their current depth. This is also used
+                with static objects such as trees, on a separate component that scales their size at the start of a level.
               </p>
             </div>
-
+            <div className={"separator"}></div>
             <div id={"highway-crash"}>
-              <h2 className={"heading"}>Highway Crash</h2>
-              <p>
-                Nullam sed lorem leo. Morbi dictum elit eu tincidunt sagittis. Nulla gravida, leo in aliquam maximus,
-                lorem nibh tincidunt dui, vel imperdiet augue ante eu lacus. Donec suscipit nec diam vel accumsan. Sed
-                pretium, arcu eget blandit posuere, lorem velit placerat sapien, sed dictum lacus tortor ut enim.
-                Praesent in quam semper, laoreet felis nec, euismod ipsum. Orci varius natoque penatibus et magnis dis
-                parturient montes, nascetur ridiculus mus. Nulla eleifend egestas nisl at molestie. In sem nisl, pretium
-                non elit id, ornare feugiat massa. Quisque maximus nibh ac rutrum mattis. Curabitur quis vestibulum
-                nibh.
-              </p>
-              <p>
-                Integer elementum vitae nulla eu elementum. Integer convallis tellus pellentesque nisl accumsan
-                ullamcorper. Sed porttitor sollicitudin dui, nec ultricies lorem efficitur accumsan. Nam vitae tortor
-                elit. Proin vestibulum malesuada scelerisque. Aliquam tristique mi diam, dignissim aliquam elit ultrices
-                quis. Aliquam erat volutpat.
-              </p>
-              <p>
-                Integer elementum vitae nulla eu elementum. Integer convallis tellus pellentesque nisl accumsan
-                ullamcorper. Sed porttitor sollicitudin dui, nec ultricies lorem efficitur accumsan. Nam vitae tortor
-                elit. Proin vestibulum malesuada scelerisque. Aliquam tristique mi diam, dignissim aliquam elit ultrices
-                quis. Aliquam erat volutpat.
-              </p>
-              <p>
-                Integer elementum vitae nulla eu elementum. Integer convallis tellus pellentesque nisl accumsan
-                ullamcorper. Sed porttitor sollicitudin dui, nec ultricies lorem efficitur accumsan. Nam vitae tortor
-                elit. Proin vestibulum malesuada scelerisque. Aliquam tristique mi diam, dignissim aliquam elit ultrices
-                quis. Aliquam erat volutpat.
-              </p>
-              <p>
-                Integer elementum vitae nulla eu elementum. Integer convallis tellus pellentesque nisl accumsan
-                ullamcorper. Sed porttitor sollicitudin dui, nec ultricies lorem efficitur accumsan. Nam vitae tortor
-                elit. Proin vestibulum malesuada scelerisque. Aliquam tristique mi diam, dignissim aliquam elit ultrices
-                quis. Aliquam erat volutpat.
-              </p>
-              <p>
-                Integer elementum vitae nulla eu elementum. Integer convallis tellus pellentesque nisl accumsan
-                ullamcorper. Sed porttitor sollicitudin dui, nec ultricies lorem efficitur accumsan. Nam vitae tortor
-                elit. Proin vestibulum malesuada scelerisque. Aliquam tristique mi diam, dignissim aliquam elit ultrices
-                quis. Aliquam erat volutpat.
-              </p>
-              <p>
-                Integer elementum vitae nulla eu elementum. Integer convallis tellus pellentesque nisl accumsan
-                ullamcorper. Sed porttitor sollicitudin dui, nec ultricies lorem efficitur accumsan. Nam vitae tortor
-                elit. Proin vestibulum malesuada scelerisque. Aliquam tristique mi diam, dignissim aliquam elit ultrices
-                quis. Aliquam erat volutpat.
-              </p>
-              <p>
-                Integer elementum vitae nulla eu elementum. Integer convallis tellus pellentesque nisl accumsan
-                ullamcorper. Sed porttitor sollicitudin dui, nec ultricies lorem efficitur accumsan. Nam vitae tortor
-                elit. Proin vestibulum malesuada scelerisque. Aliquam tristique mi diam, dignissim aliquam elit ultrices
-                quis. Aliquam erat volutpat.
-              </p>
+              <h1 className={"heading"}>Highway Crash</h1>
+              <div
+                style={{
+                  position: "relative",
+                  width: "100%",
+                  paddingBottom: "56.25%",
+                }}
+              >
+                <iframe
+                  src="https://www.youtube.com/embed/JYrpsIkDrWs?si=eJK1R3dOevLPV4RR"
+                  title="Highway Crash"
+                  style={{
+                    position: "absolute",
+                    width: "100%",
+                    height: "100%",
+                    border: "0",
+                    paddingBottom: "5px",
+                  }}
+                  allowFullScreen
+                ></iframe>
+              </div>
+              <div className={"row"}>
+                <div className={"node language"}>C#</div>
+                <div className={"node engine"}>Unity</div>
+                <div className={"node published"}>Published</div>
+              </div>
+              <div className={"info-content"}>
+                <div className={"info-row"}>
+                  <div className={"title"}>Platform(s):</div>
+                  Mobile/WebGL
+                </div>
+                <div className={"info-row"}>
+                  <div className={"title"}>Team size:</div>
+                  1
+                </div>
+              </div>
+              <ul>
+                <li>
+                  Implemented procedural level generation, offering an unlimited variety of gameplay environments and
+                  increasing player engagement with 25% more playtime or sessions per user
+                </li>
+                <li>
+                  Designed and developed custom physics systems, improving game performance by 30% and delivering
+                  smoother gameplay for over 4000 users
+                </li>
+                <li>
+                  Integrated Google services, including Firebase, Ads, In-App Purchases (IAP), and marketing resulting
+                  in a 12.5% increase in monetization and 50% growth in active users
+                </li>
+                <li>
+                  Developed leaderboards and score tracking systems, boosting player competition and engagement, with 5%
+                  increase in player retention and 50 leaderboard entries per day
+                </li>
+                <li>
+                  Engaged with users and provided regular updates, resulting in 4,000+ downloads and 4.5/5 star rating
+                </li>
+              </ul>
             </div>
-
+            <div className={"separator"}></div>
             <div id={"planetary-exploration"}>
-              <h2 className={"heading"}>Planetary Exploration</h2>
+              <h1 className={"heading"}>Planetary exploration</h1>
+              <div>
+                <LazyVideo
+                  src={videoProtodev}
+                  poster={posterProtodev}
+                  style={{
+                    width: "100%",
+                    aspectRatio: 1920 / 848,
+                  }}
+                />
+              </div>
+              <div className={"row"}>
+                <div className={"node language"}>C++</div>
+                <div className={"node engine"}>Unreal Engine</div>
+                <div className={"node team-project"}>Team project</div>
+              </div>
+              <div className={"info-content"}>
+                <div className={"info-row"}>
+                  <div className={"title"}>Platform(s):</div>
+                  PC
+                </div>
+                <div className={"info-row"}>
+                  <div className={"title"}>Team size:</div>
+                  3 Programmers 5 Artists
+                </div>
+                <div className={"info-row"}>
+                  <div className={"title"}>Primary role:</div>
+                  Programmer
+                </div>
+              </div>
               <p>
-                Nullam sed lorem leo. Morbi dictum elit eu tincidunt sagittis. Nulla gravida, leo in aliquam maximus,
-                lorem nibh tincidunt dui, vel imperdiet augue ante eu lacus. Donec suscipit nec diam vel accumsan. Sed
-                pretium, arcu eget blandit posuere, lorem velit placerat sapien, sed dictum lacus tortor ut enim.
-                Praesent in quam semper, laoreet felis nec, euismod ipsum. Orci varius natoque penatibus et magnis dis
-                parturient montes, nascetur ridiculus mus. Nulla eleifend egestas nisl at molestie. In sem nisl, pretium
-                non elit id, ornare feugiat massa. Quisque maximus nibh ac rutrum mattis. Curabitur quis vestibulum
-                nibh.
+                University group project - team of three programmers and three artists.
+                My contributions to the project include:
               </p>
-              <p>
-                Integer elementum vitae nulla eu elementum. Integer convallis tellus pellentesque nisl accumsan
-                ullamcorper. Sed porttitor sollicitudin dui, nec ultricies lorem efficitur accumsan. Nam vitae tortor
-                elit. Proin vestibulum malesuada scelerisque. Aliquam tristique mi diam, dignissim aliquam elit ultrices
-                quis. Aliquam erat volutpat.
-              </p>
-              <p>
-                Integer elementum vitae nulla eu elementum. Integer convallis tellus pellentesque nisl accumsan
-                ullamcorper. Sed porttitor sollicitudin dui, nec ultricies lorem efficitur accumsan. Nam vitae tortor
-                elit. Proin vestibulum malesuada scelerisque. Aliquam tristique mi diam, dignissim aliquam elit ultrices
-                quis. Aliquam erat volutpat.
-              </p>
-              <p>
-                Integer elementum vitae nulla eu elementum. Integer convallis tellus pellentesque nisl accumsan
-                ullamcorper. Sed porttitor sollicitudin dui, nec ultricies lorem efficitur accumsan. Nam vitae tortor
-                elit. Proin vestibulum malesuada scelerisque. Aliquam tristique mi diam, dignissim aliquam elit ultrices
-                quis. Aliquam erat volutpat.
-              </p>
-              <p>
-                Integer elementum vitae nulla eu elementum. Integer convallis tellus pellentesque nisl accumsan
-                ullamcorper. Sed porttitor sollicitudin dui, nec ultricies lorem efficitur accumsan. Nam vitae tortor
-                elit. Proin vestibulum malesuada scelerisque. Aliquam tristique mi diam, dignissim aliquam elit ultrices
-                quis. Aliquam erat volutpat.
-              </p>
-              <p>
-                Integer elementum vitae nulla eu elementum. Integer convallis tellus pellentesque nisl accumsan
-                ullamcorper. Sed porttitor sollicitudin dui, nec ultricies lorem efficitur accumsan. Nam vitae tortor
-                elit. Proin vestibulum malesuada scelerisque. Aliquam tristique mi diam, dignissim aliquam elit ultrices
-                quis. Aliquam erat volutpat.
-              </p>
-              <p>
-                Integer elementum vitae nulla eu elementum. Integer convallis tellus pellentesque nisl accumsan
-                ullamcorper. Sed porttitor sollicitudin dui, nec ultricies lorem efficitur accumsan. Nam vitae tortor
-                elit. Proin vestibulum malesuada scelerisque. Aliquam tristique mi diam, dignissim aliquam elit ultrices
-                quis. Aliquam erat volutpat.
-              </p>
-              <p>
-                Integer elementum vitae nulla eu elementum. Integer convallis tellus pellentesque nisl accumsan
-                ullamcorper. Sed porttitor sollicitudin dui, nec ultricies lorem efficitur accumsan. Nam vitae tortor
-                elit. Proin vestibulum malesuada scelerisque. Aliquam tristique mi diam, dignissim aliquam elit ultrices
-                quis. Aliquam erat volutpat.
-              </p>
+              <ul>
+                <li>
+                  Implementing the objective system
+                </li>
+                <li>
+                  Sound implementation
+                </li>
+                <li>
+                  Weapon system
+                </li>
+                <li>
+                  General optimisation and bug fixes
+                </li>
+                <li>
+                  Inventory management
+                </li>
+                <li>
+                  Loading screen and cutscene implementation
+                </li>
+              </ul>
             </div>
+            <div className={"separator"}></div>
+            <div id={"vehicle-system"}>
+              <h1 className={"heading"}>Vehicle driving system</h1>
+              <div className={"row"}>
+                <div className={"node language"}>C#</div>
+                <div className={"node engine"}>Unity</div>
+                <div className={"node research"}>Research</div>
+              </div>
+              <p>
+                Experimental vehicle driving project that simulates real-world driving mechanics.
+                The system integrates realistic gear shifting, acceleration, braking, and steering
+                dynamics to provide an authentic driving experience.
+              </p>
+              <p>
+                This project was mainly used as an opportunity for research and development of a topic
+                with no prior experience.
+              </p>
 
-            <div id={"conquered-lands"}>
-              <h2 className={"heading"}>Conquered Lands</h2>
-              <p>
-                Nullam sed lorem leo. Morbi dictum elit eu tincidunt sagittis. Nulla gravida, leo in aliquam maximus,
-                lorem nibh tincidunt dui, vel imperdiet augue ante eu lacus. Donec suscipit nec diam vel accumsan. Sed
-                pretium, arcu eget blandit posuere, lorem velit placerat sapien, sed dictum lacus tortor ut enim.
-                Praesent in quam semper, laoreet felis nec, euismod ipsum. Orci varius natoque penatibus et magnis dis
-                parturient montes, nascetur ridiculus mus. Nulla eleifend egestas nisl at molestie. In sem nisl, pretium
-                non elit id, ornare feugiat massa. Quisque maximus nibh ac rutrum mattis. Curabitur quis vestibulum
-                nibh.
-              </p>
-              <p>
-                Integer elementum vitae nulla eu elementum. Integer convallis tellus pellentesque nisl accumsan
-                ullamcorper. Sed porttitor sollicitudin dui, nec ultricies lorem efficitur accumsan. Nam vitae tortor
-                elit. Proin vestibulum malesuada scelerisque. Aliquam tristique mi diam, dignissim aliquam elit ultrices
-                quis. Aliquam erat volutpat.
-              </p>
+              <div id={"vehicle-physics"}>
+                <h2 className={"heading"}>Physics implementation</h2>
+                <p>
+                  Implemented an event bus to allow clean communication between certain parts of the game. This was mostly
+                  used between the UI and game logic, allowing me to effectively separate parts of the game from direct
+                  communication.
+                </p>
+              </div>
+
+              <div id={"vehicle-research"}>
+                <h2 className={"heading"}>Research</h2>
+                <p>
+                  Implemented an event bus to allow clean communication between certain parts of the game. This was mostly
+                  used between the UI and game logic, allowing me to effectively separate parts of the game from direct
+                  communication.
+                </p>
+              </div>
             </div>
           </div>
           <div className={"toc"}>
